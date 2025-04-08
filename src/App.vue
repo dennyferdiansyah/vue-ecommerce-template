@@ -27,8 +27,7 @@ const layouts = {
   default: DefaultLayout,
   auth: AuthLayout,
 };
-
-const layout = computed(() => layouts[route.meta.layout] || DefaultLayout);
+const layout = computed(() => layouts[route.meta.layout as keyof typeof layouts] || DefaultLayout);
 </script>
 
 <style scoped>

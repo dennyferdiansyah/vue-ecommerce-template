@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useAuthStore } from '@/stores/auth'
+import { useAuthStore } from '@/stores/auth.store.ts'
 import { useRouter } from 'vue-router'
 import AppButton from '@/components/common/AppButton.vue'
 

@@ -3,5 +3,5 @@ export interface CartItemTypes {
     title: string
     price: number
     quantity: number
-    image?: string
+    images?: string
 }

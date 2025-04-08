@@ -1,17 +1,21 @@
-import { useProductStore } from '@/stores/products'
+import { useProductStore } from '@/stores/product.store.ts'
+import { storeToRefs } from 'pinia'
 
 export function useProducts() {
     const productStore = useProductStore()
+    const { products, loading } = storeToRefs(productStore)
 
-    const loadProducts = async () => {
-        if (!productStore.products.length) {
-            await productStore.fetchProducts()
-        }
+    const loadProducts = async (filters = {}, page: number = 1, limit: number = 12) => {
+        await productStore.fetchProducts({
+            ...filters,
+            page,
+            limit,
+        })
     }
 
     return {
-        products: productStore.products,
-        loading: productStore.loading,
-        loadProducts
+        products,
+        loading,
+        loadProducts,
     }
 }

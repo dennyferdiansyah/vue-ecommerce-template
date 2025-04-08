@@ -4,15 +4,15 @@
       <Avatar class="w-8 h-8 bg-accent-light">
         <AvatarFallback class=" bg-accent">DF</AvatarFallback>
       </Avatar>
-      <span class="text-xs font-semibold whitespace-nowrap text-ellipsis overflow-hidden text-left block w-auto">Sign In / Register</span>
+      <span class="text-xs font-semibold whitespace-nowrap text-ellipsis overflow-hidden text-left block w-auto">Denny Ferdiansyah</span>
     </DropdownMenuTrigger>
     <DropdownMenuContent class="bg-neutral-800 text-white border-0">
       <DropdownMenuLabel>My Account</DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuItem>Profile</DropdownMenuItem>
-      <DropdownMenuItem>Billing</DropdownMenuItem>
-      <DropdownMenuItem>Team</DropdownMenuItem>
-      <DropdownMenuItem>Subscription</DropdownMenuItem>
+      <DropdownMenuItem>Order</DropdownMenuItem>
+      <DropdownMenuItem>Wishlist</DropdownMenuItem>
+      <DropdownMenuItem>Logout</DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
 </template>
@@ -25,5 +25,5 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import {Avatar, AvatarFallback, AvatarImage} from "@/components/ui/avatar";
+import {Avatar, AvatarFallback} from "@/components/ui/avatar";
 </script>

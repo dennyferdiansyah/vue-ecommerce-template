@@ -5,12 +5,16 @@
     { "path": "./tsconfig.node.json" }
   ],
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "target": "ESNext",
     "module": "ESNext",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "reka-ui": ["node_modules/reka-ui"]
     },
+    "moduleResolution": "bundler",
+    "types": [],
     "verbatimModuleSyntax": true
   }
 }

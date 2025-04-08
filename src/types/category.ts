@@ -3,6 +3,6 @@ export interface CategoryTypes {
     name: string,
     slug: string,
     image: string,
-    creationAt: string,
-    updatedAt: string
+    creationAt: Date,
+    updatedAt: Date
 }

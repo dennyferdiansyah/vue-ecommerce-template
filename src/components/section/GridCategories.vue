@@ -6,7 +6,7 @@
         >
           <CarouselContent class="-ml-3">
             <CarouselItem v-for="(val, index) in categoryStore.categories" :key="index" class="md:basis-1/2 lg:basis-1/7 pl-3">
-                <router-link :to="`/category/${val.slug}`">
+                <router-link :to="routePaths.category(val.slug)">
                   <Card class="p-0 group/category flex justify-center items-center border-0 bg-transparent  gap-0 relative">
                     <CardContent class="flex relative w-full aspect-square rounded-3xl overflow-hidden items-center justify-center p-0">
                       <LazyImage
@@ -29,10 +29,11 @@
 <script setup lang="ts">
 import {Card, CardAction, CardContent} from '@/components/ui/card'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel'
-import {useCategoryStore} from "@/stores/categories.ts";
+import {useCategoryStore} from "@/stores/category.store.ts";
 import {onMounted} from "vue";
 import {getImageUrl} from "@/utils/common.ts";
 import LazyImage from "@/components/image/LazyImage.vue";
+import {routePaths} from "@/utils/path.utils.ts";
 
 const categoryStore = useCategoryStore()
 

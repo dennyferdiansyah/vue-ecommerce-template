@@ -10,6 +10,18 @@ export interface Product {
         name: string
         image: string
     }
-    creationAt?: string
-    updatedAt?: string
+    creationAt?: Date
+    updatedAt?: Date
+}
+
+
+export interface SearchProductParams {
+    title?: string;
+    price?: number;
+    price_min?: number;
+    price_max?: number;
+    categoryId?: number;
+    categorySlug?: string;
+    page?: number;
+    limit?: number;
 }

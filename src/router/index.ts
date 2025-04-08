@@ -2,14 +2,17 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const withDefaultLayout = (component: any) => ({
     component,
-    meta: { layout: 'default' },
+    meta: { layout: 'default', showBreadcrumbs: true   },
     suspensible: true,
 })
 
 const routes = [
     {
         path: '/',
-        ...withDefaultLayout(() => import(/* webpackChunkName: "home" */ '@/pages/Home.vue')),
+        ...withDefaultLayout(() => import(/* webpackChunkName: "indexs" */ '@/pages/Index.vue')),
+        meta: {
+            showBreadcrumbs: false,
+        }
     },
     {
         path: '/product/:slug',
@@ -27,12 +30,23 @@ const routes = [
         path: '/favorites',
         ...withDefaultLayout(() => import(/* webpackChunkName: "favorite-product-list" */ '@/pages/products/FavoritePage.vue')),
     },
+    {
+        path: '/cart',
+        ...withDefaultLayout(() => import(/* webpackChunkName: "cart-index" */ '@/pages/cart/index.vue')),
+    },
+    {
+        path: '/:pathMatch(.*)*',
+        ...withDefaultLayout(() => import(/* webpackChunkName: "not-found" */ '@/pages/NotFound.vue')),
+        meta: {
+            showBreadcrumbs: false,
+        }
+    },
 ]
 
 const router = createRouter({
     history: createWebHistory(),
     routes,
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior() {
         // Always scroll to top
         return { top: 0 }
     }

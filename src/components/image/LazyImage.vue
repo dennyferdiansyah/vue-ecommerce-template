@@ -13,7 +13,7 @@
       ]"
     />
     <Skeleton
-        v-if="!loaded"
+        v-if="!loaded && !visible"
         :class="'absolute inset-0 h-full w-full bg-gray-100 rounded animate-pulse'"
     />
   </div>
@@ -23,7 +23,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { Skeleton } from '@/components/ui/skeleton'
 
-const props = defineProps<{
+defineProps<{
   src: string
   alt?: string
   className?: string

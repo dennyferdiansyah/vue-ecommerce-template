@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { useCartStore } from './cartStore'
+import { useCartStore } from './cart.store.ts'
 import type {CartItemTypes} from "@/types/cart.ts";
 
 export interface Order {

@@ -8,6 +8,7 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+import type {VNode} from "vue";
 
 defineProps<{
   caption?: string
@@ -15,9 +16,9 @@ defineProps<{
     key: string
     label: string
     align?: 'right' | 'left' | 'center'
-    render?: (row: any) => any
+    render?: (row: Record<string, any>) => VNode
   }[]
-  rows: Record<string, any>[]
+  rows?: Record<string, any>[]
 }>()
 </script>
 

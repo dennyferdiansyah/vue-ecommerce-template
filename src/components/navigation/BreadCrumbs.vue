@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -10,11 +10,8 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 
-// Access current route
 const route = useRoute()
-const router = useRouter()
 
-// Generate breadcrumb parts from the current path
 const breadcrumbs = computed(() => {
   const segments = route.path.split('/').filter(Boolean)
   const crumbs = []
@@ -40,7 +37,7 @@ const breadcrumbs = computed(() => {
 </script>
 
 <template>
-  <Breadcrumb>
+  <Breadcrumb class="mb-4">
     <BreadcrumbList>
       <BreadcrumbItem>
         <BreadcrumbLink href="/">Home</BreadcrumbLink>
