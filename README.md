@@ -1,8 +1,7 @@
 # 🛍️ Vue E-commerce Template
 
 A modern and customizable e-commerce front-end template built with **Vue 3**, **TypeScript**, and **TailwindCSS**. Perfect for developers looking to kickstart an online store project with a clean architecture and scalable design.
-
-![vue-ecommerce-template](https://github.com/dennyferdiansyah/vue-ecommerce-template/assets/preview.jpg)
+### [Live Demo](https://vue-ecommerce-template-9ysx.vercel.app/)
 
 ---
 
